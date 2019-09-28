@@ -1,0 +1,16 @@
+# activemq 配置由 spring.activemq.* 属性控制
+# 更多详细配置参考官网：https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/htmlsingle/#common-application-properties
+# ActiveMQProperties.java：https://github.com/spring-projects/spring-boot/blob/v2.1.6.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jms/activemq/ActiveMQProperties.java
+spring:
+  activemq:
+    broker-url: 'tcp://localhost:61616'   #ActiveMQ服务请求地址，不写时默认为 tcp://localhost:61616
+    in-memory: true   #默认代理 URL 是否应在内存中，默认为 true
+    pool:
+      enabled: false  #是否应创建 JmsPoolConnectionFactory，而不是常规的 ConnectionFactory，默认 false
+      max-connections: 50   #最大池连接数
+  jms:
+    cache:
+      session-cache-size: 5  #会话缓存的大小（每个jms会话类型）,默认为 1
+
+
+
